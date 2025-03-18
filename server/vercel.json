@@ -2,22 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",  
-      "use": "@vercel/node"  
-    },
-    {
-      "src": "client/build/**", 
-      "use": "@vercel/static"    
+      "src": "server/**/*.js",  // Backend ke JavaScript files
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",   
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",        
-      "dest": "/client/build/$1"
+      "src": "/api/(.*)",   // API requests ko backend route karna
+      "dest": "/server/api/$1"
     }
   ]
 }
