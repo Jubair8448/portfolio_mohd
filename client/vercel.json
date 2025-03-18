@@ -2,22 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",  
-      "use": "@vercel/node"  
-    },
-    {
-      "src": "build/**",  
-      "use": "@vercel/static"  
+      "src": "api/**/*.js",  // All backend API files under 'api' directory
+      "use": "@vercel/node"  // Use Vercel Node.js runtime for backend
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",  
-      "dest": "/api/$1"  
-    },
-    {
-      "src": "/(.*)",  
-      "dest": "/build/$1" 
+      "src": "/api/(.*)",
+      "dest": "/api/$1"  // All API requests routed to the respective backend function
     }
   ]
 }
