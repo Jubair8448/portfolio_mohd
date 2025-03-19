@@ -22,19 +22,19 @@ import { getUserSkillInfo } from './features/skill/skillSlice';
 import { getUserPortfolio } from './features/portfolio/portfolioSlice';
 import UpdatePortfolio from './pages/UpdatePortfolio';
 import SignupPage from './pages/SignupPage';
-import About from "./pages/about";
+import About from "./pages/about"
 
 function App({ darkMode }) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getUserInfor());
-    dispatch(getUserPortfolio());
-    dispatch(getUserSkillInfo());
-  }, [dispatch]);
+    dispatch(getUserInfor())
+    dispatch(getUserPortfolio())
+    dispatch(getUserSkillInfo())
+  }, [dispatch])
 
   return (
-    <>
+    <div>
       <HashRouter>
         <Routes>
           <Route path="*" element={<NotFound />} />
@@ -64,8 +64,9 @@ function App({ darkMode }) {
       </HashRouter>
 
       <ToastContainer position="top-center" autoClose={1000} />
-    </>
-  );
+    </div>
+
+  )
 }
 
 export default App;
