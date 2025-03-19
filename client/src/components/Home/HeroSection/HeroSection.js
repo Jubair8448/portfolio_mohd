@@ -20,30 +20,30 @@ import HeroImage from "../../../assets/images/heroImg.png";
 import myCV from "../../../assets/cv/cv_mohd.pdf";
 import { useSelector } from "react-redux";
 
+
 const HeroSection = ({ darkMode }) => {
-    const { user } = useSelector((state) => state.user)
+    const { user } = useSelector((state) => state.user);
 
     const openPdfInNewTab = () => {
-        window.open(myCV, '_blank')
-    }
+        window.open(myCV, "_blank");
+    };
 
     return (
         <HeroSectionMain id="home">
             <HeroContainer>
                 <HeroData>
                     <HeroGreeting light={darkMode ? 1 : 0}>Hello, I'm</HeroGreeting>
-                    <div className="overflow-hidden bg-transperent py-2"><marquee>
-  <div className="bg-gradient-to-r from-yellow-300 to-pink-500 bg-clip-text text-transparent text-1xl font-bold">
- ✨ MOHD JUBAIR ALAM ✨ SOFTWARE-DEVELOPER ✨
-  </div></marquee>
-</div>
+                    
+                    {/* ✅ Replaced <marquee> with CSS animation */}
+                    <div className="overflow-hidden bg-transparent py-2">
+                        <div className="scroll-text">
+                            ✨ MOHD JUBAIR ALAM ✨ SOFTWARE-DEVELOPER ✨
+                        </div>
+                    </div>
+
                     <HeroName light={darkMode ? 1 : 0}>{user.name}</HeroName>
-                    <HeroEducation light={darkMode ? 1 : 0}>
-                        {user.stack}
-                    </HeroEducation>
-                    <HeroEducation light={darkMode ? 1 : 0}>
-                        And I Like Onigiri 🍙😋
-                    </HeroEducation> 
+                    <HeroEducation light={darkMode ? 1 : 0}>{user.stack}</HeroEducation>
+                    <HeroEducation light={darkMode ? 1 : 0}>And I Like Onigiri 🍙😋</HeroEducation>
 
                     <HeroButtons>
                         <ButtonCV className="hero_ghost" onClick={openPdfInNewTab}>
