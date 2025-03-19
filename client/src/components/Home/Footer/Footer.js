@@ -58,19 +58,35 @@ const Footer = ({ darkMode }) => {
                 </FooterList>
 
                 <FooterSocial>
-                    <FooterSocialLink href="https://www.linkedin.com/in/jubair-ansari-7b9253259/" target="_blank">
+                    <FooterSocialLink 
+                        href="https://www.linkedin.com/in/jubair-ansari-7b9253259/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i className="bx bxl-linkedin-square"></i>
                     </FooterSocialLink>
 
-                    <FooterSocialLink href="https://github.com/jubair0786" target="_blank">
+                    <FooterSocialLink 
+                        href="https://github.com/jubair0786" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i className="bx bxl-github"></i>
                     </FooterSocialLink>
 
-                    <FooterSocialLink href="https://leetcode.com/u/oX1lXzrzvb/" target="_blank">
+                    <FooterSocialLink 
+                        href="https://leetcode.com/u/oX1lXzrzvb/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i className="bx bxl-codepen"></i>
                     </FooterSocialLink>
 
-                    <FooterSocialLink href="https://wa.me/8448454299" target="_blank">
+                    <FooterSocialLink 
+                        href="https://wa.me/8448454299" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <i className="bx bxl-whatsapp"></i>
                     </FooterSocialLink>
                 </FooterSocial>
@@ -81,7 +97,7 @@ const Footer = ({ darkMode }) => {
                             width="150"
                             height="90"
                             src="https://www.youtube.com/embed/-p1DJSgrA6k"
-                            title="YouTube video"
+                            title="YouTube video player" // Added title attribute
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -97,6 +113,7 @@ const Footer = ({ darkMode }) => {
                             marginHeight="0"
                             marginWidth="0"
                             src="https://www.google.com/maps?q=New+Delhi,India&output=embed"
+                            title="Google Maps - New Delhi" // Added title attribute
                             allowFullScreen
                         ></iframe>
                     </FooterLocation>
