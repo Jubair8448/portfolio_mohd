@@ -22,51 +22,49 @@ import { getUserSkillInfo } from './features/skill/skillSlice';
 import { getUserPortfolio } from './features/portfolio/portfolioSlice';
 import UpdatePortfolio from './pages/UpdatePortfolio';
 import SignupPage from './pages/SignupPage';
-import About from "./pages/about"
+//import About from "./pages/About"; // Ensure the filename matches exactly (case-sensitive in some OS)
+import About from "./pages/about";  // Match the exact filename
 
 function App({ darkMode }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUserInfor())
-    dispatch(getUserPortfolio())
-    dispatch(getUserSkillInfo())
-  }, [dispatch])
+    dispatch(getUserInfor());
+    dispatch(getUserPortfolio());
+    dispatch(getUserSkillInfo());
+  }, [dispatch]);
 
   return (
-    <div>
+    <>
       <HashRouter>
         <Routes>
           <Route path="*" element={<NotFound />} />
-          <Route path='/'>
-            <Route index element={<Home darkMode={darkMode} />} />
-            <Route path="auth" element={<Auth />} />
-            <Route path="/about" element={<About />} />
-            <Route path='signup' element={<SignupPage />} />
-            <Route path='login' element={<Auth />} />
-            <Route path='forgot' element={<ForgotPassword />} />
-            <Route path='user/reset/:token' element={<ResetPassword />} />
-            <Route path='dashboard' element={<Dashboard />} />
-            <Route path='profile' element={<DashboardProfile />} />
-            <Route path='skill/'>
-              <Route index element={<DashboardSkills />} />
-              <Route path="add" element={<AddSkill />} />
-              <Route path='update/:id' element={<UpdateSkill />} />
-            </Route>
-            <Route path='portfolio/'>
-              <Route index element={<DashboardPortfolio />} />
-              <Route path='add' element={<AddPortfolio />} />
-              <Route path='update/:id' element={<UpdatePortfolio />} />
-            </Route>
-            <Route path='resume' element={<DashboardResume />} />
+          <Route path="" element={<Home darkMode={darkMode} />} />
+          <Route path="auth" element={<Auth />} />
+          <Route path="about" element={<About />} />
+          <Route path="signup" element={<SignupPage />} />
+          <Route path="login" element={<Auth />} />
+          <Route path="forgot" element={<ForgotPassword />} />
+          <Route path="user/reset/:token" element={<ResetPassword />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="profile" element={<DashboardProfile />} />
+          <Route path="skill">
+            <Route index element={<DashboardSkills />} />
+            <Route path="add" element={<AddSkill />} />
+            <Route path="update/:id" element={<UpdateSkill />} />
           </Route>
+          <Route path="portfolio">
+            <Route index element={<DashboardPortfolio />} />
+            <Route path="add" element={<AddPortfolio />} />
+            <Route path="update/:id" element={<UpdatePortfolio />} />
+          </Route>
+          <Route path="resume" element={<DashboardResume />} />
         </Routes>
       </HashRouter>
 
       <ToastContainer position="top-center" autoClose={1000} />
-    </div>
-
-  )
+    </>
+  );
 }
 
 export default App;
