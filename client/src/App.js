@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
@@ -22,20 +22,20 @@ import { getUserSkillInfo } from './features/skill/skillSlice';
 import { getUserPortfolio } from './features/portfolio/portfolioSlice';
 import UpdatePortfolio from './pages/UpdatePortfolio';
 import SignupPage from './pages/SignupPage';
-import About from "./pages/about"
+import About from "./pages/about";
 
 function App({ darkMode }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUserInfor())
-    dispatch(getUserPortfolio())
-    dispatch(getUserSkillInfo())
-  }, [dispatch])
+    dispatch(getUserInfor());
+    dispatch(getUserPortfolio());
+    dispatch(getUserSkillInfo());
+  }, [dispatch]);
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path='/'>
@@ -61,12 +61,11 @@ function App({ darkMode }) {
             <Route path='resume' element={<DashboardResume />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
 
       <ToastContainer position="top-center" autoClose={1000} />
     </>
-
-  )
+  );
 }
 
 export default App;
