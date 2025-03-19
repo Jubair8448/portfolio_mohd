@@ -18,7 +18,7 @@ const SignupPage = () => {
     const { firstName, lastName, email, password, confirmPassword } = formData;
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth);
+    const { isLoading, isError, isSuccess, message } = useSelector((state) => state.auth);
 
     // Memoized dispatch function to prevent infinite loops
     const resetState = useCallback(() => {
