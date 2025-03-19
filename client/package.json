@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "/"
 
   "proxy": "https://portfolio-mohd.onrender.com",
   "private": true,
